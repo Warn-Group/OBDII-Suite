@@ -1,0 +1,6 @@
+[submodule "obdii-api"]
+	path = obdii-api
+	url = https://github.com/PaulMarisOUMary/OBDII-API.git
+[submodule "obdii-dashboard"]
+	path = obdii-dashboard
+	url = https://github.com/PaulMarisOUMary/OBDII-Dashboard.git
