@@ -1,0 +1,23 @@
+services:
+  api:
+    build:
+      context: ./obdii-api
+    environment:
+      - UVICORN_HOST=0.0.0.0
+      - UVICORN_PORT=8000
+    ports:
+      - 8000:8000
+    # devices:
+    #   - "/dev/ttyUSB0:/dev/ttyUSB0" # Adjust this to your device
+    restart: unless-stopped
+  
+  dashboard:
+    build:
+      context: ./obdii-dashboard
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
+    restart: unless-stopped
